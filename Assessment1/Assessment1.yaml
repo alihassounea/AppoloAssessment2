@@ -1,0 +1,68 @@
+---
+name: "Assessment1"
+dataIns:
+- name: "originalText"
+  type: "string"
+  source: "originaltext"
+- name: "pattern"
+  type: "string"
+  source: "pattern"
+- name: "w"
+  type: "number"
+  source: "w"
+workflowBody:
+- function:
+    name: "Divide"
+    type: "Divide"
+    dataIns:
+    - name: "originalStr"
+      type: "string"
+      source: "Assessment1/originalText"
+    - name: "w"
+      type: "number"
+      source: "Assessment1/w"
+    dataOuts:
+    - name: "stringArray"
+      type: "collection"
+- parallelFor:
+    name: "forEachPart"
+    dataIns:
+    - name: "iterator"
+      type: "collection"
+      source: "Divide/stringArray"
+    iterators: ["iterator"]
+    loopBody:
+    - function:
+        name: "Count"
+        type: "Count"
+        dataIns:
+        - name: "textBatch"
+          type: "collection"
+          source: "forEachPart/iterator"
+        - name: "pattern"
+          type: "string"
+          source: "Assessment1/pattern"
+        dataOuts:
+        - name: "Occurence"
+          type: "number"
+    dataOuts:
+    - name: "OccurencesArr"
+      type: "collection"
+      source: "Count/Occurence"
+- function:
+    name: "Sum"
+    type: "Sum"
+    dataIns:
+    - name: "OccurenceArr"
+      type: "collection"
+      source: "forEachPart/OccurencesArr"
+    dataOuts:
+    - name: "totalOccurence"
+      type: "number"
+dataOuts:
+- name: "totalOccurence"
+  type: "number"
+  source: "Sum/totalOccurence"
+- name: "exitText"
+  type: "collection"
+  source: "Divide/stringArray"
