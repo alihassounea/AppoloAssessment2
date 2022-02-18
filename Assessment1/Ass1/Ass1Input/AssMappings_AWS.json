@@ -1,0 +1,35 @@
+[
+    {
+        "functionType": "Count",
+        "resources": [
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://9dpht1brp6.execute-api.us-east-1.amazonaws.com/Count"
+                }
+            }
+        ]
+    },
+    {
+        "functionType": "Divide",
+        "resources": [
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://6k0nzc0d4f.execute-api.us-east-1.amazonaws.com/Divide"
+                }
+            }
+        ]
+    },
+    {
+        "functionType": "Sum",
+        "resources": [
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://gc2ftuh5w8.execute-api.us-east-1.amazonaws.com/Sum"
+                }
+            }
+        ]
+    }
+]
