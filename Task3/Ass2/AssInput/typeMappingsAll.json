@@ -1,0 +1,70 @@
+[
+    {
+        "functionType": "Divide",
+        "resources": [
+            {
+                "type": "Local",
+                "properties": {
+                    "Image": "alihassounea/divide"
+                }
+            },
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://6k0nzc0d4f.execute-api.us-east-1.amazonaws.com/Divide"
+                }
+            }
+        ]
+    },
+    {
+        "functionType": "Count",
+        "resources": [
+            {
+                "type": "Local",
+                "properties": {
+                    "Image": "alihassounea/count"
+                }
+            },
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://9dpht1brp6.execute-api.us-east-1.amazonaws.com/Count"
+                }
+            }
+        ]
+    },
+    {
+        "functionType": "Sum",
+        "resources": [
+            {
+                "type": "Local",
+                "properties": {
+                    "Image": "alihassounea/sum"
+                }
+            },
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://gc2ftuh5w8.execute-api.us-east-1.amazonaws.com/Sum"
+                }
+            }
+        ]
+    },
+    {
+        "functionType": "Clean",
+        "resources": [
+            {
+                "type": "Local",
+                "properties": {
+                    "Image": "alihassounea/clean"
+                }
+            },
+            {
+                "type": "Serverless",
+                "properties": {
+                    "Uri": "https://wajejjt7s2.execute-api.us-east-1.amazonaws.com/Clean"
+                }
+            }
+        ]
+    }
+]
